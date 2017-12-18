@@ -103,7 +103,7 @@
       <label class="col-xs-3 control-label">email</label>
 
       <div class="col-xs-9">
-        <input class="form-control" type="text" ngModel name="email" #email="ngModel" email/>
+        <input class="form-control" type="text" [(ngModel)]="field.email" name="email" #email="ngModel" email/>
         <p class="alert alert-danger" *ngIf="email?.errors?.email">email error</p>
       </div>
     </div>

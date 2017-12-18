@@ -3,6 +3,7 @@ import { AbstractControl, Validators, ValidatorFn } from '@angular/forms';
 import { isPresent } from '../util/lang';
 
 export const email: ValidatorFn = (control: AbstractControl): {[key: string]: boolean} => {
+  if (control.dirty === false) return { 'email': false };
   if (isPresent(Validators.required(control))) return null;
 
   let v: string = control.value;
